@@ -1,9 +1,9 @@
 # Insert Schema
-Insert into SnickrUser(pwd, uname, name, nickname, email, joindate, lastlogin) values 
-("pwd", "userA", "Sam", "Sam", "sam@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00"),
-("test", "userB", "Kate", "Kate", "kate@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00"),
-("pet", "userC", "Penny", "Penny", "penny@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00"),
-("noise", "userD", "Rick", "Rick", "rick@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00");
+Insert into SnickrUser(uid, name, nickname, email, joindate, lastlogin) values 
+("u1", "Sam", "Sam", "sam@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00"),
+("u2", "Kate", "Kate", "kate@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00"),
+("u3", "Penny", "Penny", "penny@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00"),
+("u4", "Rick", "Rick", "rick@test.com", "2019-04-05 20:26:00", "2019-06-10 20:26:00");
 
 Insert into Workspace(wname,wcreatorid,wtimestamp) values 
 ("W1", 1, "2019-04-05 20:32:00"), 
