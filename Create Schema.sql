@@ -14,14 +14,14 @@ create table SnickrUser(
 create table Workspace(
 	wid int auto_increment primary key,
 	wname varchar(30) not null,
-	wcreatorid int not null,
+	wcreatorid char(20),
 	wtimestamp datetime,
 	foreign key (wcreatorid) references SnickrUser(uid)
 );
 
 create table WorkspaceUser(
 	wid int,
-	uid int,
+	uid char(20),
 	wauth char(6),
 	wutimestamp datetime,
 	primary key (wid, uid),
@@ -34,7 +34,7 @@ create table Channel(
 	wid int not null,
 	cname varchar(30) not null,
 	ctype char(7) not null,
-	ccreatorid int not null,
+	ccreatorid char(20) not null,
 	ctimestamp datetime,
 	foreign key (wid) references Workspace(wid),
 	foreign key (ccreatorid) references SnickrUser(uid)
@@ -43,7 +43,7 @@ create table Channel(
 
 create table ChannelUser(
 	cid int,
-	uid int,
+	uid char(20),
 	cauth char(6),
 	cutimestamp datetime,
 	primary key (cid, uid),
@@ -54,7 +54,7 @@ create table ChannelUser(
 create table Message(
 	msgid int auto_increment primary key,
 	cid int,
-	uid int,
+	uid char(20),
 	content text,
 	mtimestamp datetime,
 	foreign key (cid) references Channel(cid),
@@ -64,7 +64,7 @@ create table Message(
 
 create table WorkspaceInvitation(
 	wid int,
-	uid int,
+	uid char(20),
 	witimestamp datetime,
 	wistatus char(10),
 	wistatuschange datetime,
@@ -75,7 +75,7 @@ create table WorkspaceInvitation(
 
 create table ChannelInvitation(
 	cid int,
-	uid int,
+	uid char(20),
 	citimestamp datetime,
 	cistatus char(10),
 	cistatuschange datetime,
